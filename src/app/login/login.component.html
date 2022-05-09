@@ -1,0 +1,37 @@
+<div class="flex-row justify-content-center display-box">
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+        <div class="form-group mt-1">
+            <label>Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter name" [(ngModel)]="userModel.name"
+                required name="name" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                Name is required
+            </div>
+        </div>
+        <div class="form-group mt-1">
+            <label>Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter address"
+                [(ngModel)]="userModel.address" required name="address" #address="ngModel">
+            <div [hidden]="address.valid || address.pristine" class="alert alert-danger">
+                Address is required
+            </div>
+        </div>
+        <div class="form-group mt-1">
+            <label>Date of birthday</label>
+            <input type="date" class="form-control" id='birthday' placeholder="Enter date of birthday"
+                [(ngModel)]="userModel.birthday" required name="birthday" min="1960-01-01" #birthday="ngModel">
+            <div [hidden]="birthday.valid || birthday.pristine" class="alert alert-danger">
+                Date of birthday is required
+            </div>
+        </div>
+        <div class="form-group mt-1">
+            <label>Phone</label>
+            <input type="text" id="phone" class="form-control" placeholder="Enter phone" [(ngModel)]="userModel.phone"
+                required name="phone" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" #phone="ngModel">
+                <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
+                    Phone is invalid
+                </div>
+        </div>
+        <button class="btn btn-primary mt-3" [disabled]="!bookForm.form.valid">Login</button>
+    </form>
+</div>

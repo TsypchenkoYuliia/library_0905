@@ -1,0 +1,17 @@
+<p class="user-title">Hello {{user?.name}}!</p>
+<div class="d-flex flex-row flex-wrap">
+    <div *ngFor="let book of books">
+        <div class="card template">
+            <div class="card-body">
+                <h5 class="card-title">{{book.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{book.bookAuthor}}</h6>
+                <p class="card-text">{{book.year}}</p>
+                <button *ngIf="!book.reading" type="button" (click)="onRead(book)" class="btn btn-success m-2">Read book</button>
+                <button *ngIf="book.reading === user?.name" type="button" (click)="onReturn(book)" class="btn btn-secondary m-2">Return book</button>
+                <!-- <button *ngIf="book.author === user?.name" type="button" (click)="onEdit(book)" class="btn btn-info m-2">Edit book</button> -->
+                <button type="button" (click)="onEdit(book)" class="btn btn-info m-2">Edit book</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" routerLink="/add" class="btn btn-warning m-2">Add book</button>

@@ -1,0 +1,15 @@
+.display-box {
+    position: absolute;
+    z-index: 0;
+    background: rgb(128, 128, 186);
+    width: 30%;
+    margin-top: 10%; 
+    margin-left:25%;
+    color: black;
+    font-size: large;
+    font-weight:500;
+  }
+
+  form{
+      padding: 5%;
+  }

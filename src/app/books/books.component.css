@@ -1,0 +1,27 @@
+button.selected {
+  background-color: black;
+  color: white;
+}
+
+button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.user-title{
+  color: rgb(14, 19, 39);
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.template{
+  border-radius: 10px 20px 30px 40px/30px;
+  margin: 10px; 
+  width: 18rem;
+  background-color: rgb(232, 217, 212);
+}
